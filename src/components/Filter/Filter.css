@@ -1,0 +1,129 @@
+.filter-container {
+  align-items: center;
+  border: 1px solid lightpink;
+  border-radius: 8px;
+  display: flex;
+  gap: 20px;
+  height: fit-content;
+  margin: 20px auto;
+  padding: 15px;
+  width: 95%;
+}
+
+.filter-header {
+  align-items: center;
+  border-right: 1px solid lightpink;
+  display: flex;
+  gap: 15px;
+  padding-right: 15px;
+}
+
+.filter-header h2 {
+  color: #e52b50;
+  font-size: 1.2rem;
+  font-family: cursive;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.filter-header button {
+  background: none;
+  border: 1px solid #e52b50;
+  border-radius: 4px;
+  color: #e52b50;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.filter-header button:hover {
+  background-color: #e52b50;
+  color: white;
+}
+
+.filter-content {
+  align-items: center;
+  flex-grow: 1;
+  display: flex;
+  gap: 30px;
+}
+
+.filter-section {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.filter-section h3 {
+  color: #e52b50;
+  font-size: 1rem;
+  font-family: cursive;
+  letter-spacing: 1px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.price-inputs {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.price-inputs input {
+  border: 1px solid lightpink;
+  border-radius: 4px;
+  outline: none;
+  padding: 5px;
+  width: 70px;
+}
+
+.price-inputs input:focus {
+  border-color: #e52b50;
+}
+
+.price-inputs span {
+  color: #e52b50;
+}
+
+.filter-options {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+}
+
+.filter-options label {
+  align-items: center;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  gap: 5px;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.filter-options label:hover {
+  color: #e52b50;
+}
+
+.filter-options input[type="radio"] {
+  accent-color: #e52b50;
+  cursor: pointer;
+}
+
+select {
+  border: 1px solid #ffd6de;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 8px;
+  width: 100%;
+}
+
+input[type="radio"] {
+  accent-color: #e52b50;
+}
+
+input:focus,
+select:focus {
+  outline-color: #e52b50;
+}

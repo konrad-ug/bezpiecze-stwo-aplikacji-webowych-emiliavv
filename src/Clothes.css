@@ -1,0 +1,87 @@
+.clothes #women-clothes,
+#loading-womens-clothes {
+  color: #e52b50;
+  font-family: cursive;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bold;
+  margin: 50px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.clothes .box {
+  display: grid;
+  gap: 80px;
+  grid-template-columns: repeat(3, 30%);
+  margin: 50px 180px;
+}
+
+.clothes .item {
+  box-shadow: 2px 2px 20px lightpink;
+  display: grid;
+  padding: 20px;
+}
+
+.clothes .item:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.clothes .clothing-item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.clothes .clothing-item a {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.clothes #pictures-clothes {
+  justify-self: center;
+  height: 220px;
+  max-width: 100%;
+  margin: 20px;
+  margin-bottom: 40px;
+  width: 150px;
+}
+
+.clothes #describtions-clothes {
+  font-size: 0.9rem;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.clothes #prices-clothes {
+  text-align: center;
+}
+
+.clothes .addToBasket {
+  background-color: lightpink;
+  border: none;
+  justify-self: center;
+  padding: 5px 15px;
+  width: auto;
+}
+
+.clothes .addToBasket:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.clothes #cart {
+  height: 30px;
+  width: 30px;
+}
+
+.clothes .small-rating {
+  color: #e52b50;
+  letter-spacing: 1px;
+  margin: 16px;
+  justify-self: center;
+}

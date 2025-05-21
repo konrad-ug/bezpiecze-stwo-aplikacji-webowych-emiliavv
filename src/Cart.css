@@ -1,0 +1,166 @@
+h1.cart-title {
+  color: #e52b50;
+  font-family: cursive;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 5px;
+  margin: 40px;
+  text-align: center;
+}
+
+.cart-container {
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+}
+
+.cart-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  margin: 50px 80px;
+}
+
+.cart-items-container p.noting-incart {
+  color: lightpink;
+  font-size: 2.8rem;
+  font-weight: lighter;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.cart-items-container .cart-items {
+  align-items: center;
+  border: 1px solid lightpink;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 15px 30px;
+  width: 90%;
+}
+
+.cart-items-container .cart-items img {
+  width: 30%;
+}
+
+.cart-items-container .cart-items h2 {
+  font-size: 1rem;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  line-height: 30px;
+}
+
+.cart-items-container .cart-items .price {
+  font-size: 1.2rem;
+  color: #e52b50;
+}
+
+.cart-items-container .cart-items .products-incart input {
+  border: 1px solid lightpink;
+  margin: 0px 8px;
+  padding: 10px;
+}
+
+.cart-items-container .cart-items .products-incart button {
+  background-color: white;
+  border: none;
+  color: #e52b50;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  margin: 0px 8px;
+  padding: 10px;
+}
+
+.cart-items-container .cart-items .products-incart button:hover {
+  background-color: #ffd6de;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20%;
+  margin-top: 50px;
+}
+
+.cart-summary hr {
+  border: 3px solid #e52b50;
+}
+
+.cart-summary h2 {
+  color: #e52b50;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cart-summary h2 span {
+  color: black;
+}
+
+.cart-summary button {
+  background-color: lightpink;
+  border: none;
+  color: #e52b50;
+  font-size: 26px;
+  letter-spacing: 6px;
+  margin: 20px;
+  padding: 10px 30px;
+}
+
+.cart-summary button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.discount-section {
+  display: grid;
+  grid-template-rows: 0.5fr 1fr;
+}
+
+.discount-section input {
+  align-self: end;
+  border: #ffd6de 1px solid;
+  font-weight: lighter;
+  height: 60%;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.discount-section input:focus {
+  outline-color: lightpink;
+  outline-width: 10px;
+}
+
+.discount-section button {
+  background-color: white;
+  border: 1px solid lightpink;
+  color: #e52b50;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 4px 6px;
+  transition: all 0.1s ease-in-out;
+}
+
+.discount-section button:hover {
+  background-color: lightpink;
+  cursor: pointer;
+}
+
+.discount-applied {
+  color: #e52b50;
+  font-size: 12px;
+  text-align: center;
+}
+.discount-applied * {
+  margin: 0px;
+}
+
+.discount-applied .original-price {
+  color: gray;
+  text-decoration: line-through;
+}

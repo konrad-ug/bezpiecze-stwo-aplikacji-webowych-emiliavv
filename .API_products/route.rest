@@ -1,0 +1,140 @@
+POST http://localhost:3000/products
+Content-Type: application/json
+
+const products = [
+  {
+    "id": "1",
+    "name": "Jackie 1961 Small Shoulder Bag",
+    "brand": "Gucci",
+    "price": 13700,
+    "category": "bag",
+    "color": "dark red",
+    "count_in_stock": 3,
+    "rating": [5, 5, 5, 3],
+    "image": "./img/gucci.jpeg",
+    "description":
+      "In the Fall Winter 2024 collection, the Gucci Jackie 1961 shoulder bag with new light gold-toned piston closure features fine Gucci Rosso Ancora red leather, highlighting the craftsmanship, crescent shape, and sleek silhouette of the House's iconic handbag. This small size comes with a leather strap and additional green and red Web strap for different styling options.",
+  },
+  {
+    "id": "2",
+    "name": "Leather Kensington Bag",
+    "brand": "Kurt Geiger London",
+    "price": 1300,
+    "category": "bag",
+    "color": "rainbow",
+    "count_in_stock": 1,
+    "rating": [4, 5],
+    "image": "./img/rainbow.jpeg",
+    "description":
+      "The Leather Kensington Bag is crafted from soft metallic laminated pebble grain cow leather with iconic rainbow sewn stripe pattern. The antiqued silver Eagle head features rainbow coloured crystals and black crystal eyes on the front flap.",
+  },
+  {
+    "id": "3",
+    "name": "Small Shoreditch Bow Bag",
+    "brand": "Kurt Geiger London",
+    "price": 1250,
+    "category": "bag",
+    "color": "black",
+    "count_in_stock": 0,
+    "rating": [],
+    "image": "./img/bow.jpeg",
+    "description":
+      "The Leather Kensington Bag is crafted from soft metallic laminated pebble grain cow leather with iconic rainbow sewn stripe pattern. The antiqued silver Eagle head features rainbow coloured crystals and black crystal eyes on the front flap.",
+  },
+  {
+    "id": "4",
+    "name": "The Large Bambino Bag",
+    "brand": "Jacquemus",
+    "price": 3500,
+    "category": "bag",
+    "color": "pink",
+    "count_in_stock": 10,
+    "rating": [5, 4, 5, 4, 5, 3, 2],
+    "image": "./img/jacq.jpeg",
+    "description":
+      "Handbag with adjustable crossbody strap: Small handle, Removable strap, Card slot rear pocket, Flap magnet closure, Golden JACQUEMUS logo, 23.5 cm x 13 cm",
+  },
+  {
+    "id": "5",
+    "name": "The Bisou Perle Bag",
+    "brand": "Jacquemus",
+    "price": 2000,
+    "category": "bag",
+    "color": "yellow",
+    "count_in_stock": 1,
+    "rating": [5],
+    "image": "./img/perl.jpeg",
+    "description":
+      "Beaded shoulder bag: Smooth leather structured shoulder bag, Adjustable buckle leather strap with large beads, Piped outline, One interior patch pocket, Gold metal logo and hardware, Zip closure, 27 x 10,5",
+  },
+  {
+    "id": "6",
+    "name": "Shoulder glossy black bag",
+    "brand": "Chylak",
+    "price": 1590,
+    "category": "bag",
+    "color": "black",
+    "count_in_stock": 100,
+    "rating": [5, 3, 5, 4, 2, 5, 3, 4, 5, 5],
+    "image": "./img/chylak.jpeg",
+    "description":
+      "Structured bag in glossy black leather, closed with a magnetic flap.The perfect everyday bag to stow your essentials.",
+  },
+  {
+    "id": "7",
+    "name": "Baguette purple sequined bag",
+    "brand": "Fendi",
+    "price": 17000,
+    "category": "bag",
+    "color": "purple",
+    "count_in_stock": 1,
+    "rating": [5, 5, 5, 5, 5, 5],
+    "image": "./img/fendi.jpeg",
+    "description":
+      "Iconic medium Baguette bag, with fine, finely embroidered all-over with purple sequins of different shapes and sizes to create a 3D effect and decorated with an FF clasp. This style is a re-release of the original version first introduced in the Autumn/Winter 1999-2000 Collection. Features a front flap, tone on tone leather details and magnetic clasp. Internal compartment with zip pocket and gold-finish metalware. The bag can be carried by hand, or worn either on the shoulder or cross-body thanks to the leather handle and shoulder strap, both detachable. Made in Italy",
+  },
+  {
+    "id": "8",
+    "name": "Large Hobo Grained Leaher bag - Juliette",
+    "brand": "Le Tanneur",
+    "price": 2100,
+    "category": "bag",
+    "color": "brown",
+    "count_in_stock": 30,
+    "rating": [5, 3, 5, 4, 2, 5, 3, 4, 5, 5],
+    "image": "./img/freanch.jpeg",
+    "description":
+      "Large hobo bag with signature double zip closure and Le Tanneur branding. Handheld.",
+  },
+  {
+    "id": "9",
+    "name": "Alma BB bag",
+    "brand": "Louis Vuitton",
+    "price": 9900,
+    "category": "bag",
+    "color": "brown",
+    "count_in_stock": 4,
+    "rating": [5, 3, 5, 4, 2, 5, 3, 4, 5, 5, 2, 3],
+    "image": "./img/lv.jpeg",
+    "description":
+      "The Alma BB handbag traces its pedigree to an Art Deco original, introduced in 1934. Signature details impart a timeless elegance to this model crafted from iconic Monogram canvas: note the golden padlock and keys, two Toron handles and smart leather key bell. Fitted with a detachable and adjustable strap, this charming small bag is perfect for cross-body wear.",
+  },
+];
+
+###
+
+GET http://localhost:3000/products/3
+
+###
+
+DELETE http://localhost:3000/products/3
+
+###
+
+PATCH http://localhost:3000/products/3
+Content-Type: application/json
+
+{
+    "color": "yellow"
+}
+

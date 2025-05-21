@@ -1,0 +1,73 @@
+.jewelery #jewelery,
+#loading-jewelery {
+  color: #e52b50;
+  font-family: cursive;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bold;
+  margin: 50px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.jewelery .box {
+  display: grid;
+  gap: 80px;
+  grid-template-columns: repeat(3, 30%);
+  margin: 50px 180px;
+}
+
+.jewelery .item {
+  box-shadow: 2px 2px 20px lightpink;
+  display: grid;
+  padding: 20px;
+}
+
+.jewelery .item:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.jewelery #pictures-jewelery {
+  justify-self: center;
+  height: 220px;
+  margin: 20px;
+  margin-bottom: 40px;
+  width: 150px;
+}
+
+.jewelery #describtions-jewelery {
+  font-size: 0.9rem;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.jewelery #prices-jewelery {
+  text-align: center;
+}
+
+.jewelery .addToBasket {
+  background-color: lightpink;
+  border: none;
+  justify-self: center;
+  padding: 5px 15px;
+  width: auto;
+}
+
+.jewelery .addToBasket:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.jewelery #cart {
+  height: 30px;
+  width: 30px;
+}
+
+.jewelery .small-rating {
+  color: #e52b50;
+  letter-spacing: 1px;
+  margin: 16px;
+  justify-self: center;
+}

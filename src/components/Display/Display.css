@@ -1,0 +1,17 @@
+.carousel-container {
+  align-items: flex-start;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.carousel {
+  max-width: 1200px;
+  width: 60%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+}
