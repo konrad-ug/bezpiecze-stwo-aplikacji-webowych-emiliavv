@@ -20,7 +20,7 @@ export default function ProductDetail() {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `https://fakestoreapi.com/products/${id}`
+          `https://fakestoreapi.com/products/${encodeURIComponent(id)}`
         );
         setProduct(response.data);
 

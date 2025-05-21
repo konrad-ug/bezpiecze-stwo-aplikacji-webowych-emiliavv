@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import "./Checkout.css";
+import { sanitizeInput, sanitizeEmail, sanitizePhone, sanitizeCardNumber, sanitizeZipCode } from "./utils/sanitize";
 
 export default function Checkout() {
   const navigate = useNavigate();
@@ -65,11 +66,30 @@ export default function Checkout() {
   };
 
   const handleInputChange = (section, field, value) => {
+    let sanitizedValue = value;
+
+    switch (field) {
+      case 'email':
+        sanitizedValue = sanitizeEmail(value);
+        break;
+      case 'phone':
+        sanitizedValue = sanitizePhone(value);
+        break;
+      case 'cardNumber':
+        sanitizedValue = sanitizeCardNumber(value);
+        break;
+      case 'zipCode':
+        sanitizedValue = sanitizeZipCode(value);
+        break;
+      default:
+        sanitizedValue = sanitizeInput(value);
+    }
+
     setFormData((prev) => ({
       ...prev,
       [section]: {
         ...prev[section],
-        [field]: value,
+        [field]: sanitizedValue,
       },
     }));
   };

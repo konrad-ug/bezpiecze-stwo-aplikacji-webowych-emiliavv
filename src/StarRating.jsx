@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FaStar } from "react-icons/fa";
 import PropTypes from "prop-types";
 import Star from "./Star";
+import { sanitizeInput } from "./utils/sanitize";
 
 const createArray = (length) => [...Array(length)];
 
@@ -106,7 +107,7 @@ function StarRating({ productId, totalStars = 5 }) {
         <textarea
           placeholder="Write your review here..."
           value={review}
-          onChange={(e) => setReview(e.target.value)}
+          onChange={(e) => setReview(sanitizeInput(e.target.value))}
           rows={4}
         />
         <button onClick={handleReviewSubmit}>Submit Review</button>

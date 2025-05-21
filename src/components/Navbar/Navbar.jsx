@@ -4,6 +4,7 @@ import axios from "axios";
 import "./Navbar.css";
 import Logo from "../../assets/Logo.png";
 import keycloak from "../../keycloak";
+import { sanitizeInput } from "../../utils/sanitize";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -46,7 +47,6 @@ export default function Navbar() {
     searchInputRef.current?.focus();
   }, []);
 
-
   useEffect(() => {
     const updateCartCount = () => {
       const cart = JSON.parse(localStorage.getItem("cart") || "[]");
@@ -62,7 +62,6 @@ export default function Navbar() {
     };
   }, []);
 
-
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
@@ -74,7 +73,7 @@ export default function Navbar() {
   };
 
   const handleSearch = (e) => {
-    const query = e.target.value.toLowerCase();
+    const query = sanitizeInput(e.target.value).toLowerCase();
     setSearchQuery(query);
 
     if (query.trim() === "") {
