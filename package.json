@@ -9,9 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@popperjs/core": "^2.11.8",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
+    "keycloak-js": "^26.2.0",
     "postcss": "^8.5.1",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",

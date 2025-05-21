@@ -27,13 +27,22 @@
   outline-width: 10px;
 }
 
-.sign button {
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.auth-button {
   background-color: lightpink;
   border: none;
   color: #e52b50;
-  font-size: 26px;
-  letter-spacing: 6px;
-  margin-bottom: 20px;
+  font-size: 20px;
+  letter-spacing: 4px;
+  padding: 15px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .sign button:hover {
