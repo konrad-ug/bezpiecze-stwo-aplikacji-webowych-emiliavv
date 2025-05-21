@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Navbar.css";
 import Logo from "../../assets/Logo.png";
+import keycloak from "../../keycloak";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -12,7 +13,6 @@ export default function Navbar() {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [products, setProducts] = useState([]);
   const [showAdvancedSearch, setShowAdvancedSearch] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
   const [filters, setFilters] = useState({
     minPrice: "",
     maxPrice: "",
@@ -46,6 +46,7 @@ export default function Navbar() {
     searchInputRef.current?.focus();
   }, []);
 
+
   useEffect(() => {
     const updateCartCount = () => {
       const cart = JSON.parse(localStorage.getItem("cart") || "[]");
@@ -61,25 +62,15 @@ export default function Navbar() {
     };
   }, []);
 
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("currentUser"));
-    setCurrentUser(user);
-  }, []);
 
-  useEffect(() => {
-    const handleStorageChange = (e) => {
-      if (e.key === "currentUser") {
-        setCurrentUser(JSON.parse(e.newValue));
-      }
-    };
-    window.addEventListener("storage", handleStorageChange);
-    return () => window.removeEventListener("storage", handleStorageChange);
-  }, []);
-
-  const handleLogout = (e) => {
+  const handleLogout = async (e) => {
     e.preventDefault();
-    localStorage.removeItem("currentUser");
-    setCurrentUser(null);
+    try {
+      await keycloak.logout();
+      window.location.reload();
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
   };
 
   const handleSearch = (e) => {
@@ -157,10 +148,8 @@ export default function Navbar() {
           </li>
           <li>
             <div className="right">
-              {currentUser ? (
-                <Link to="/SignIn" onClick={handleLogout}>
-                  {currentUser.name} (log out)
-                </Link>
+              {keycloak.authenticated ? (
+                <Link to="/" onClick={handleLogout}>Sign Out</Link>
               ) : (
                 <Link to="/SignIn">Sign In / Register</Link>
               )}

@@ -29,17 +29,12 @@ PrivateRoute.propTypes = {
 };
 
 export default function App() {
-  const logout = () => {
-    keycloak.logout();
-  };
-
   return (
     <Router>
       <div className="app-container">
         {keycloak.authenticated && (
-          <button onClick={logout} className="logout-button">
-            Wyloguj się
-          </button>
+          <>
+          </>
         )}
         <Routes>
           <Route path="/" element={<Home />} />

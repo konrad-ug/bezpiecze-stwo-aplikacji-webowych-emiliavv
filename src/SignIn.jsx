@@ -5,11 +5,11 @@ import keycloak from "./keycloak";
 
 export default function SignIn() {
   const handleSignIn = () => {
-    keycloak.login();
+    keycloak.login({ redirectUri: window.location.origin + '/' });
   };
 
   const handleRegister = () => {
-    keycloak.register();
+    keycloak.register({ redirectUri: window.location.origin + '/' });
   };
 
   return (
