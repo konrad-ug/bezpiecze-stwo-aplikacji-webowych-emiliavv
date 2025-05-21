@@ -17,15 +17,25 @@ import Checkout from "./Checkout";
 import OrderConfirmation from "./OrderConfirmation";
 import SignIn from "./SignIn";
 
-const PrivateRoute = ({ children }) => {
+const PrivateRoute = ({ children, requireAdmin }) => {
   if (!keycloak.authenticated) {
     return <Navigate to="/" replace />;
   }
+
+  if (requireAdmin && !keycloak.hasRealmRole('admin')) {
+    return <Navigate to="/" replace />;
+  }
+
   return children;
 };
 
 PrivateRoute.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  requireAdmin: PropTypes.bool
+};
+
+PrivateRoute.defaultProps = {
+  requireAdmin: false
 };
 
 export default function App() {
@@ -54,7 +64,7 @@ export default function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/admin" element={
-            <PrivateRoute>
+            <PrivateRoute requireAdmin={true}>
               <AdminLayout />
             </PrivateRoute>
           }>

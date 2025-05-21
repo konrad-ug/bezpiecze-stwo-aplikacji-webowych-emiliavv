@@ -149,7 +149,12 @@ export default function Navbar() {
           <li>
             <div className="right">
               {keycloak.authenticated ? (
-                <Link to="/" onClick={handleLogout}>Sign Out</Link>
+                <>
+                  {keycloak.hasRealmRole('admin') && (
+                    <Link to="/admin" className="me-3">Panel Admina</Link>
+                  )}
+                  <Link to="/" onClick={handleLogout}>Sign Out</Link>
+                </>
               ) : (
                 <Link to="/SignIn">Sign In / Register</Link>
               )}
