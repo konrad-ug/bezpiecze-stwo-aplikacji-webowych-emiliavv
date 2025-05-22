@@ -1,0 +1,86 @@
+.order-history {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.order-history p.no-orders {
+  color: lightpink;
+  font-size: 2.8rem;
+  font-weight: lighter;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+h1.order-title {
+  color: #e52b50;
+  font-family: cursive;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 5px;
+  margin: 40px;
+  text-align: center;
+}
+
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.order-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.order-card:hover {
+  transform: translateY(-4px);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.order-header h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.order-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.order-content {
+  color: #444;
+}
+
+.order-content ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0.5rem 0;
+}
+
+.order-content li {
+  padding: 0.25rem 0;
+}
+
+.order-content p {
+  margin: 0.5rem 0;
+}
+
+.order-content p:last-child {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  font-weight: bold;
+}

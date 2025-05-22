@@ -152,6 +152,7 @@ export default function Navbar() {
                   {keycloak.hasRealmRole('admin') && (
                     <Link to="/admin" className="me-3">Panel Admina</Link>
                   )}
+                  <Link to="/orders" className="me-3">Order History</Link>
                   <Link to="/" onClick={handleLogout}>Sign Out</Link>
                 </>
               ) : (

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Navbar from "./components/Navbar/Navbar";
+import keycloak from "./keycloak";
 import "./Checkout.css";
 import { sanitizeInput, sanitizeEmail, sanitizePhone, sanitizeCardNumber, sanitizeZipCode } from "./utils/sanitize";
 
@@ -42,7 +44,7 @@ export default function Checkout() {
     return baseValidation;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateAllData()) {
       alert("Please fill in all required fields");
@@ -57,12 +59,49 @@ export default function Checkout() {
       return;
     }
 
-    navigate("/order-confirmation", {
-      state: {
-        name: formData.contact.name,
-        email: formData.contact.email,
-      },
-    });
+    try {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const orderData = {
+        items: cart.map(item => ({
+          id: item.id,
+          name: item.title,
+          quantity: item.quantity,
+          price: item.price,
+          productName: item.title
+        })),
+        total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+        shipping: formData.shipping,
+        contact: {
+          name: formData.contact.name,
+          surname: formData.contact.surname,
+          email: formData.contact.email,
+          phone: formData.contact.phone
+        },
+        status: "pending",
+        date: new Date().toISOString()
+      };
+
+      await keycloak.updateToken(30);
+      const response = await axios.post("http://localhost:3001/api/order-history", orderData, {
+        headers: {
+          Authorization: `Bearer ${keycloak.token}`
+        }
+      });
+
+      localStorage.setItem('cart', '[]');
+      window.dispatchEvent(new Event('cart-update'));
+      
+      navigate("/order-confirmation", {
+        state: {
+          name: formData.contact.name,
+          email: formData.contact.email,
+          orderId: response.data.id
+        },
+      });
+    } catch (error) {
+      console.error("Error creating order:", error);
+      alert("Failed to create order. Please try again.");
+    }
   };
 
   const handleInputChange = (section, field, value) => {

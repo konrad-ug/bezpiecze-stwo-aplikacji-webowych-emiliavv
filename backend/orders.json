@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "user": "user1",
+    "date": "2025-05-22T10:00:00Z",
+    "items": [
+      "Nike Air Max",
+      "Adidas T-Shirt"
+    ],
+    "total": 299.99,
+    "status": "completed"
+  },
+  {
+    "id": 2,
+    "user": "admin",
+    "date": "2025-05-22T11:30:00Z",
+    "items": [
+      "MacBook Pro",
+      "Magic Mouse"
+    ],
+    "total": 3299,
+    "status": "pending"
+  },
+  {
+    "id": 1747911906527,
+    "user": "lena_smilek",
+    "date": "2025-05-22T11:05:06.527Z",
+    "items": [
+      {
+        "id": 16,
+        "name": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+        "quantity": 2,
+        "price": 29.95,
+        "productName": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket"
+      }
+    ],
+    "total": 59.9,
+    "status": "pending"
+  }
+]

@@ -9,14 +9,14 @@ emailjs.init("jgvl-_8kKxjxQvtYm");
 
 export default function OrderConfirmation() {
   const location = useLocation();
-  const { name, email } = location.state || {};
+  const { name, email, orderId } = location.state || {};
 
   useEffect(() => {
     if (email && name) {
       const templateParams = {
         to_name: name,
         to_email: email,
-        message: `Thank you for your order, ${name}! We'll be informing you about your order status soon.`,
+        message: `Thank you for your order, ${name}! Your order ID is: ${orderId}. We'll be informing you about your order status soon.`,
       };
 
       emailjs
@@ -38,7 +38,8 @@ export default function OrderConfirmation() {
       <Navbar />
       <div className="confirmation-container">
         <h1>Thank you for your order {name}!</h1>
-        <p>We've sent all the informations to your email !</p>
+        <p>Your order ID: {orderId}</p>
+        <p>We've sent all the information to your email!</p>
         <img src={Check} alt="Check icon" />
       </div>
     </div>

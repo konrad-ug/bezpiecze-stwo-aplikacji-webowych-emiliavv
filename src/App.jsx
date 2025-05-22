@@ -16,6 +16,7 @@ import ProductDetail from "./ProductDetail.jsx";
 import Checkout from "./Checkout";
 import OrderConfirmation from "./OrderConfirmation";
 import SignIn from "./SignIn";
+import OrderHistory from "./components/OrderHistory/OrderHistory";
 
 const PrivateRoute = ({ children, requireAdmin }) => {
   if (!keycloak.authenticated) {
@@ -63,6 +64,11 @@ export default function App() {
           } />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/orders" element={
+            <PrivateRoute>
+              <OrderHistory />
+            </PrivateRoute>
+          } />
           <Route path="/admin" element={
             <PrivateRoute requireAdmin={true}>
               <AdminLayout />
