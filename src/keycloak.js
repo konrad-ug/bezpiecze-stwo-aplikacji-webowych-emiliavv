@@ -9,7 +9,8 @@ const keycloak = new Keycloak({
 
 keycloak.init({
   onLoad: 'check-sso',
-  checkLoginIframe: false
+  checkLoginIframe: false,
+  pkceMethod: 'S256'
 });
 
 export default keycloak;

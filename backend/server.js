@@ -14,6 +14,7 @@ function getPublicKey() {
   return process.env.PUBLIC_KEY.replace(/\\n/g, '\n');
 }
 
+//Middleweare
 function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization'];
   const token = authHeader?.split(' ')[1];
